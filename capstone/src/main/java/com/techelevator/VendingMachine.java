@@ -9,6 +9,10 @@ public class VendingMachine {
         return menu;
     }
 
+    public void setMenu(Map menu) {
+        this.menu = menu;
+    }
+
     public VendingMachine(Map menu){
         this.menu = menu;
     }
