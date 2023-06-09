@@ -5,7 +5,8 @@ import com.techelevator.view.Menu;
 public class Items {
     private double price;
     private String brandName;
-    private String vendingMachineLocation;
+    private String slotLocation;
+
 
     public double getPrice() {
         return price;
@@ -15,8 +16,8 @@ public class Items {
         return brandName;
     }
 
-    public String getVendingMachineLocation() {// location that user selects to buy item
-        return vendingMachineLocation;
+    public String getSlotLocation() {// location that user selects to buy item
+        return slotLocation;
     }
 
     public void setPrice(double price) {// price of item
@@ -27,14 +28,14 @@ public class Items {
         this.brandName = name;
     }
 
-    public void setVendingMachineLocation(String vendingMachineLocation) {
-        this.vendingMachineLocation = vendingMachineLocation;
+    public void setSlotLocation(String slotLocation) {
+        this.slotLocation = slotLocation;
     }
 
-    public Items(double price, String name, String vendingMachineLocation) {
+    public Items(double price, String name, String slotLocation) {
         this.price = price;
         this.brandName = name;
-        this.vendingMachineLocation = vendingMachineLocation;
+        this.slotLocation = slotLocation;
     }
 
 
