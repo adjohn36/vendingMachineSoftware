@@ -2,12 +2,23 @@ package com.techelevator;
 
 import com.techelevator.view.Menu;
 
-public class Items {
+public abstract class Items {
     private double price;
     private String brandName;
     private String slotLocation;
     private int quantity = 5;
+    private String typeOfSnack;
 
+    public Items() {
+    }
+
+    public String getTypeOfSnack() {
+        return typeOfSnack;
+    }
+
+    public void setTypeOfSnack(String typeOfSnack) {
+        this.typeOfSnack = typeOfSnack;
+    }
 
     public int getQuantity() {
         return quantity;
@@ -41,11 +52,12 @@ public class Items {
         this.slotLocation = slotLocation;
     }
 
-    public Items(double price, String name, String slotLocation, int quantity) {
+    public Items(double price, String name, String slotLocation, int quantity, String typeOfSnack) {
         this.price = price;
         this.brandName = name;
         this.slotLocation = slotLocation;
         this.quantity = quantity;
+        this.typeOfSnack = typeOfSnack;
     }
 
 

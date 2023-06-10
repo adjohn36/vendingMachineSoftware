@@ -1,8 +1,12 @@
 package com.techelevator;
 
 public class Drink extends Items {
-    public Drink(double price, String brandName, String slotLocation, int quantity) {
-        super(price, brandName, slotLocation, quantity);
+    public Drink(double price, String brandName, String slotLocation, int quantity, String typeOfSnack) {
+        super(price, brandName, slotLocation, quantity, typeOfSnack);
+    }
+
+    public Drink() {
+
     }
 
     private String purchaseDrinkDisplayMessage = "Glug Glug, Yum!";
