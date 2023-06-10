@@ -41,10 +41,11 @@ public class Items {
         this.slotLocation = slotLocation;
     }
 
-    public Items(double price, String name, String slotLocation) {
+    public Items(double price, String name, String slotLocation, int quantity) {
         this.price = price;
         this.brandName = name;
         this.slotLocation = slotLocation;
+        this.quantity = quantity;
     }
 
 

@@ -7,8 +7,14 @@ import java.util.Scanner;
 public class Inventory {
 
 
-    String inventoryFile = "vendingmachine.csv";
-    File inventoryList = new File(inventoryFile);
+    private String inventoryFile = "vendingmachine.csv";
+    private File inventoryList = new File(inventoryFile);
+    private Scanner inventoryMenu;//
+
+    public Scanner getInventoryMenu() {//
+        return inventoryMenu;
+    }
+
 
     public void scanInventory() {
         try (Scanner inventoryMenu = new Scanner(inventoryList)) {
