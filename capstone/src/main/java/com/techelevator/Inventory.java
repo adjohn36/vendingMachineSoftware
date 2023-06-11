@@ -8,38 +8,47 @@ import java.util.Scanner;
 
 public class Inventory {
 
-
     private String inventoryFile = "vendingmachine.csv";
     private File inventoryList = new File(inventoryFile);
     private List <Items> items = new ArrayList<>();
-    private Drink drink = new Drink();
-    private Candy candy = new Candy();
-    private Chip chip = new Chip();
-    private Gum gum = new Gum();
+    private Map<String, Items>
 
+
+    public List<Items> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Items> items) {
+        this.items = items;
+    }
+
+    public String getSlotLocation() {
+        return slotLocation;
+    }
+
+    public void setSlotLocation(String slotLocation) {
+        this.slotLocation = slotLocation;
+    }
 
     public void scanInventory() {
-        try (Scanner inventoryMenu = new Scanner(inventoryList)) {
-            while (inventoryMenu.hasNextLine()) {
-                String list = inventoryMenu.nextLine();
+        try (Scanner inventoryScanner = new Scanner(inventoryList)) {
+            while (inventoryScanner.hasNextLine()) {
+                String list = inventoryScanner.nextLine();
                 String[] menu = list.split("\\|");
                 String type = menu[3].toLowerCase();
- //               if()
-   //             item.setSlotLocation(menu[0]);
-     //           item.setBrandName(menu[1]);
-       //         item.setPrice(Double.parseDouble(menu[2]));
-         //       item.setTypeOfSnack(menu[3]);
-           //     item.setQuantity(5);
-             //   items.add(item);
-                for(Items item : items) {
+                items.setSlotLocation(menu[0]);
+                items.setBrandName(menu[1]);
+                items.setPrice(Double.parseDouble(menu[2]));
+                items.setTypeOfSnack(menu[3]);
+                items.setQuantity(5);
+                items.add(item);
+                for (Items item : items) {
                     System.out.println(item.getSlotLocation() + " " + item.getBrandName() + " " + item.getPrice() + " " + item.getTypeOfSnack() + " " + item.getQuantity());
                 }
-                }
-
+            }
 
             } catch(FileNotFoundException e){
                 System.out.println("invalid file");
-
 
             }
 

@@ -5,9 +5,6 @@ public class Gum extends Items {
         super(price, brandName, slotLocation, quantity, typeOfSnack);
     }
 
-    public Gum() {
-
-    }
 
     private String purchaseGumDisplayMessage = "Chew Chew, Yum!";
 }

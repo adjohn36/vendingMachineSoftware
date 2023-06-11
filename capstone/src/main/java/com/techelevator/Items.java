@@ -2,15 +2,13 @@ package com.techelevator;
 
 import com.techelevator.view.Menu;
 
-public abstract class Items {
+public class Items {
     private double price;
     private String brandName;
     private String slotLocation;
     private int quantity = 5;
     private String typeOfSnack;
 
-    public Items() {
-    }
 
     public String getTypeOfSnack() {
         return typeOfSnack;

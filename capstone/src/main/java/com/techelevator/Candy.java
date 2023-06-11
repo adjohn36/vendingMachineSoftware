@@ -5,9 +5,6 @@ public class Candy extends Items {
         super(price, brandName, slotLocation, quantity, typeOfSnack);
     }
 
-    public Candy() {
-
-    }
 
     private String purchaseCandyDisplayMessage = "Munch Munch, Yum!";
 }

@@ -5,9 +5,7 @@ public class Drink extends Items {
         super(price, brandName, slotLocation, quantity, typeOfSnack);
     }
 
-    public Drink() {
 
-    }
 
     private String purchaseDrinkDisplayMessage = "Glug Glug, Yum!";
 }
