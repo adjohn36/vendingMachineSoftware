@@ -27,7 +27,6 @@ public class VendingMachineCLI {
 	private Menu menu;
 
 
-
 	public Inventory inventory = new Inventory();
 
 
@@ -44,24 +43,28 @@ public class VendingMachineCLI {
 				inventory.scanInventory();
 				System.out.println();
 
+			} else if (choice.equals(MAIN_MENU_OPTION_PURCHASE)) {
+				System.out.println(PURCHASE_OPTIONS);
+				while (true) {
+					String purchase = (String) menu.getChoiceFromOptions(PURCHASE_OPTIONS);
 
-				} else if (choice.equals(MAIN_MENU_OPTION_PURCHASE)) {
-				String purchase = (String) menu.getChoiceFromOptions(PURCHASE_OPTIONS);
-					// do purchase - while loop?
-					System.out.println(PURCHASE_OPTIONS);//
-				while (true){
-				if (choice.equals(PURCHASE_OPTION_FEED_MONEY)){
-					try (Scanner feedMoneyScanner = new Scanner(System.in)) {
-						System.out.println("Insert Money: ");
-						String feedMoneyAmount = feedMoneyScanner.nextLine();
-			//			Double feedMoneyDollarAmount = Double.parseDouble(feedMoneyAmount);
+					if (choice.equals(PURCHASE_OPTION_FEED_MONEY)) {
+						try (Scanner feedMoneyScanner = new Scanner(System.in)) {
+							while (feedMoneyScanner.hasNextLine()) {
+								String line = feedMoneyScanner.nextLine();
 
-						System.out.println(feedMoneyAmount);
+							}
+								System.out.println("Insert Money: ");
+								String feedMoneyAmount = feedMoneyScanner.nextLine();
+								//Double feedMoneyDollarAmount = Double.parseDouble(feedMoneyAmount);
+
+								System.out.println(feedMoneyAmount);
+							}
+							System.out.println(PURCHASE_OPTION_DISPLAY_CURRENT_MONEY_PROVIDED);
+
+						}
 					}
-			//		System.out.println(PURCHASE_OPTION_DISPLAY_CURRENT_MONEY_PROVIDED);
-
 				}
-				}}
 
 			}
 		}
