@@ -12,6 +12,11 @@ public class Inventory {
     private List <Items> items = new ArrayList<>();
     private Map<String, Items> itemsMap = new TreeMap<>();
 
+    public Map<String, Items> getItemsMap() {
+        return itemsMap;
+    }
+    public String type;
+
 
     public void scanInventory() {
         try (Scanner inventoryMenu = new Scanner(inventoryList)) {
