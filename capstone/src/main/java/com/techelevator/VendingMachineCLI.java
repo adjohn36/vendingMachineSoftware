@@ -47,7 +47,11 @@ public class VendingMachineCLI {
 				String purchase = (String) menu.getChoiceFromOptions(PURCHASE_OPTIONS);
 					// do purchase - while loop?
 					System.out.println(PURCHASE_OPTION_DISPLAY_CURRENT_MONEY_PROVIDED + PURCHASE_OPTIONS);//
+				if (choice.equals(PURCHASE_OPTION_FEED_MONEY)){
+					vendingMachine.addMoney();
+					System.out.println();
 
+				}
 				}
 
 			}

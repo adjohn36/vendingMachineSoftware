@@ -6,6 +6,7 @@ import com.techelevator.view.Menu;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Map;
+import java.util.Scanner;
 
 public class VendingMachine {
 
@@ -15,6 +16,7 @@ public class VendingMachine {
     public Inventory inventory = new Inventory();
     private String type;
     public Gum gum = new Gum();
+
 
     public VendingMachine(){
             inventory.scanInventory();
