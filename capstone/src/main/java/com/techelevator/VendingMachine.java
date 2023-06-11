@@ -26,43 +26,47 @@ public class VendingMachine {
     public void setFeedMoneyDollarAmount(Double feedMoneyDollarAmount) {
         this.feedMoneyDollarAmount = feedMoneyDollarAmount;
     }
-    //public VendingMachine(){
-    //        inventory.scanInventory();
-  //  }
+
+    public VendingMachine() {
+        inventory.scanInventory();
+    }
+
+    public Scanner feedMoneyScanner = new Scanner(System.in);
 
 
     //feed money
-    public void addMoney(){
+    public Double addMoney() {
+        String feedMoneyAmount = feedMoneyScanner.nextLine();
+        Double feedMoneyDollarAmount = Double.parseDouble(feedMoneyAmount);
+        while (feedMoneyScanner.hasNextLine()) {
+            return feedMoneyDollarAmount;
+
 
         }
+        return feedMoneyDollarAmount;
 
-
-
-
-
-
-    //dispense food - print out message
-
-
-
-    public void eatMessage(){
-
-        if(type.equals("gum")){
-            System.out.println("Chew Chew, Yum!");
-
-        } else if (type.equals("chip")) {
-            System.out.println("Crunch Crunch, Yum!");
-
-        }else if (type.equals("candy")){
-            System.out.println("Munch Munch, Yum!");
-        } else if (type.equals("drink")) {
-            System.out.println("Glug Glug, Yum!");
-
-        }
     }
+        //dispense food - print out message
 
 
+        public void eatMessage () {
 
-    //dispense change
+            if (type.equals("gum")) {
+                System.out.println("Chew Chew, Yum!");
+
+            } else if (type.equals("chip")) {
+                System.out.println("Crunch Crunch, Yum!");
+
+            } else if (type.equals("candy")) {
+                System.out.println("Munch Munch, Yum!");
+            } else if (type.equals("drink")) {
+                System.out.println("Glug Glug, Yum!");
+
+            }
+        }
+
+
+        //dispense change
+
 
 }

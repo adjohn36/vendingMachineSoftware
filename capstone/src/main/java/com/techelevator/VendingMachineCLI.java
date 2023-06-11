@@ -11,7 +11,7 @@ import java.lang.reflect.Member;
 import java.util.Scanner;
 
 public class VendingMachineCLI {
-	VendingMachine vendingMachine = new VendingMachine();
+	public VendingMachine vendingMachine = new VendingMachine();
 
 
 	private static final String MAIN_MENU_OPTION_DISPLAY_ITEMS = "Display Vending Machine Items";
@@ -28,6 +28,7 @@ public class VendingMachineCLI {
 
 
 	public Inventory inventory = new Inventory();
+
 
 
 	public VendingMachineCLI(Menu menu) {
@@ -49,25 +50,22 @@ public class VendingMachineCLI {
 					String purchase = (String) menu.getChoiceFromOptions(PURCHASE_OPTIONS);
 
 					if (choice.equals(PURCHASE_OPTION_FEED_MONEY)) {
-						try (Scanner feedMoneyScanner = new Scanner(System.in)) {
-							while (feedMoneyScanner.hasNextLine()) {
-								String line = feedMoneyScanner.nextLine();
+
+							 System.out.println("Insert Money: ");
+							 vendingMachine.addMoney();
+
+
+
 
 							}
-								System.out.println("Insert Money: ");
-								String feedMoneyAmount = feedMoneyScanner.nextLine();
-								//Double feedMoneyDollarAmount = Double.parseDouble(feedMoneyAmount);
 
-								System.out.println(feedMoneyAmount);
-							}
 							System.out.println(PURCHASE_OPTION_DISPLAY_CURRENT_MONEY_PROVIDED);
-
 						}
 					}
 				}
 
 			}
-		}
+
 
 		public static void main (String[]args){
 			Menu menu = new Menu(System.in, System.out);
