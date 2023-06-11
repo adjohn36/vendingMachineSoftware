@@ -43,6 +43,7 @@ public class VendingMachineCLI {
 				// display vending machine items
 				inventory.scanInventory();
 				System.out.println();
+				
 
 
 				} else if (choice.equals(MAIN_MENU_OPTION_PURCHASE)) {
