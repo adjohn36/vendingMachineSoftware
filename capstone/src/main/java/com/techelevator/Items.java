@@ -9,7 +9,8 @@ public abstract class Items {
     private int quantity = 5;
     private String typeOfSnack;
 
-    public Items() {
+    public Items(){
+
     }
 
     public String getTypeOfSnack() {
@@ -61,4 +62,8 @@ public abstract class Items {
     }
 
 
+    @Override
+    public String toString() {
+        return getSlotLocation() + " - " + getBrandName() + " - " + getPrice();
+    }
 }

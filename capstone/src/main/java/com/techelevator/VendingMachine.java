@@ -5,14 +5,14 @@ import java.util.Map;
 public class VendingMachine{
 
 //call inventory
-    public Inventory inventory = new Inventory();
+    //TODO add a inventory property here - vending machine has an inventory
 
 
-    //take money
+    //feed money
 
 
 
-    //dispense food
+    //dispense food - print out message
 
 
 
