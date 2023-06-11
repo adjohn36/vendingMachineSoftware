@@ -19,6 +19,11 @@ public class Inventory {
 
     private Map<String, Items> itemsMap = new TreeMap<>();
 
+    public Map<String, Items> getItemsMap() {
+        return itemsMap;
+    }
+    public String type;
+
 
     public void setItems(List<Items> items) {
         this.items = items;

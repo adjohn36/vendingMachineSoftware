@@ -26,7 +26,7 @@ public class VendingMachineCLI {
 
 
 	public VendingMachine vendingMachine = new VendingMachine();
-	public Inventory inventory = new Inventory();
+	public Inventory inventory = new Inventory();2
 
 
 	public VendingMachineCLI(Menu menu) {
@@ -35,21 +35,20 @@ public class VendingMachineCLI {
 
 
 	public void run() {
-		// load inventory - call method
 		while (true) {
 			String choice = (String) menu.getChoiceFromOptions(MAIN_MENU_OPTIONS);
 
 			if (choice.equals(MAIN_MENU_OPTION_DISPLAY_ITEMS)) {
-				// display vending machine items
 				inventory.scanInventory();
 				System.out.println();
 
 
-				} else if (choice.equals(MAIN_MENU_OPTION_PURCHASE)) {
 
+				} else if (choice.equals(MAIN_MENU_OPTION_PURCHASE)) {
+				String purchase = (String) menu.getChoiceFromOptions(PURCHASE_OPTIONS);
 					// do purchase - while loop?
-					System.out.println(PURCHASE_OPTIONS);//
-					System.out.println("To do add purchase logic");
+					System.out.println(PURCHASE_OPTION_DISPLAY_CURRENT_MONEY_PROVIDED + PURCHASE_OPTIONS);//
+
 
 				}
 

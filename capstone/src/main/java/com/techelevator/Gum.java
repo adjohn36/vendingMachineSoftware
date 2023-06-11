@@ -6,5 +6,5 @@ public class Gum extends Items {
     }
 
 
-    private String purchaseGumDisplayMessage = "Chew Chew, Yum!";
+    public String purchaseGumDisplayMessage = "Chew Chew, Yum!";
 }
