@@ -9,6 +9,12 @@ public class Items {
     private int quantity = 5;
     private String typeOfSnack;
 
+<<<<<<< HEAD
+=======
+    public Items(){
+
+    }
+>>>>>>> c148eceaefb8cf9d9eddab031a7cbc9f4887e38b
 
     public String getTypeOfSnack() {
         return typeOfSnack;
@@ -59,4 +65,8 @@ public class Items {
     }
 
 
+    @Override
+    public String toString() {
+        return getSlotLocation() + " - " + getBrandName() + " - " + getPrice();
+    }
 }

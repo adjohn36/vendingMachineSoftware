@@ -35,6 +35,7 @@ public class VendingMachineCLI {
 
 
 	public void run() {
+		// load inventory - call method
 		while (true) {
 			String choice = (String) menu.getChoiceFromOptions(MAIN_MENU_OPTIONS);
 
@@ -45,7 +46,8 @@ public class VendingMachineCLI {
 
 
 				} else if (choice.equals(MAIN_MENU_OPTION_PURCHASE)) {
-					// do purchase
+
+					// do purchase - while loop?
 					System.out.println(PURCHASE_OPTIONS);//
 					System.out.println("To do add purchase logic");
 
