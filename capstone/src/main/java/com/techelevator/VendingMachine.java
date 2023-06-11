@@ -17,14 +17,14 @@ public class VendingMachine {
     public Gum gum = new Gum();
 
     public VendingMachine(){
-        inventory.scanInventory();
+            inventory.scanInventory();
     }
 
 
-    
-
-
     //feed money
+    public void addMoney(){
+
+    }
 
 
 

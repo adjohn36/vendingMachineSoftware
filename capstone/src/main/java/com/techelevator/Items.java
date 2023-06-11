@@ -66,6 +66,6 @@ public class Items {
 
     @Override
     public String toString() {
-        return getSlotLocation() + " - " + getBrandName() + " - " + getPrice();
+        return getSlotLocation() + " - " + getBrandName() + " - " + getPrice() + " amount in stock: " + getQuantity();
     }
 }
