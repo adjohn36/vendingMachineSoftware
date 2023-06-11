@@ -11,12 +11,14 @@ import java.lang.reflect.Member;
 import java.util.Scanner;
 
 public class VendingMachineCLI {
+	VendingMachine vendingMachine = new VendingMachine();
+
 
 	private static final String MAIN_MENU_OPTION_DISPLAY_ITEMS = "Display Vending Machine Items";
 	private static final String MAIN_MENU_OPTION_PURCHASE = "Purchase";
 	private static final String MAIN_MENU_OPTION_EXIT = "Exit";
 	private static final String[] MAIN_MENU_OPTIONS = {MAIN_MENU_OPTION_DISPLAY_ITEMS, MAIN_MENU_OPTION_PURCHASE, MAIN_MENU_OPTION_EXIT};
-	private static final String PURCHASE_OPTION_DISPLAY_CURRENT_MONEY_PROVIDED = "Current Money Provided: ";//
+	private final String PURCHASE_OPTION_DISPLAY_CURRENT_MONEY_PROVIDED = "Current Money Provided: ";//
 	private static final String PURCHASE_OPTION_FEED_MONEY = "Feed Money";//
 	private static final String PURCHASE_OPTION_SELECT_PRODUCT = "Select Product";//
 	private static final String PURCHASE_OPTION_FINISH_TRANSACTION = "Finish Transaction";//
@@ -25,7 +27,7 @@ public class VendingMachineCLI {
 	private Menu menu;
 
 
-	public VendingMachine vendingMachine = new VendingMachine();
+
 	public Inventory inventory = new Inventory();
 
 
@@ -46,13 +48,20 @@ public class VendingMachineCLI {
 				} else if (choice.equals(MAIN_MENU_OPTION_PURCHASE)) {
 				String purchase = (String) menu.getChoiceFromOptions(PURCHASE_OPTIONS);
 					// do purchase - while loop?
-					System.out.println(PURCHASE_OPTION_DISPLAY_CURRENT_MONEY_PROVIDED + PURCHASE_OPTIONS);//
+					System.out.println(PURCHASE_OPTIONS);//
+				while (true){
 				if (choice.equals(PURCHASE_OPTION_FEED_MONEY)){
-					vendingMachine.addMoney();
-					System.out.println();
+					try (Scanner feedMoneyScanner = new Scanner(System.in)) {
+						System.out.println("Insert Money: ");
+						String feedMoneyAmount = feedMoneyScanner.nextLine();
+			//			Double feedMoneyDollarAmount = Double.parseDouble(feedMoneyAmount);
+
+						System.out.println(feedMoneyAmount);
+					}
+			//		System.out.println(PURCHASE_OPTION_DISPLAY_CURRENT_MONEY_PROVIDED);
 
 				}
-				}
+				}}
 
 			}
 		}

@@ -16,17 +16,28 @@ public class VendingMachine {
     public Inventory inventory = new Inventory();
     private String type;
     public Gum gum = new Gum();
+    private Double balance = 0.00;
+    public Double feedMoneyDollarAmount = 0.00;
 
-
-    public VendingMachine(){
-            inventory.scanInventory();
+    public Double getFeedMoneyDollarAmount() {
+        return feedMoneyDollarAmount;
     }
+
+    public void setFeedMoneyDollarAmount(Double feedMoneyDollarAmount) {
+        this.feedMoneyDollarAmount = feedMoneyDollarAmount;
+    }
+    //public VendingMachine(){
+    //        inventory.scanInventory();
+  //  }
 
 
     //feed money
     public void addMoney(){
 
-    }
+        }
+
+
+
 
 
 
