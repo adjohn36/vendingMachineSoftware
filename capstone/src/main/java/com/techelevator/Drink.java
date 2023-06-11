@@ -8,4 +8,8 @@ public class Drink extends Items {
 
 
     private String purchaseDrinkDisplayMessage = "Glug Glug, Yum!";
+
+    public Drink() {
+
+    }
 }

@@ -7,4 +7,8 @@ public class Candy extends Items {
 
 
     private String purchaseCandyDisplayMessage = "Munch Munch, Yum!";
+
+    public Candy() {
+
+    }
 }

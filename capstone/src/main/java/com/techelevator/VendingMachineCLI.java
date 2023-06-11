@@ -26,7 +26,7 @@ public class VendingMachineCLI {
 
 
 	public VendingMachine vendingMachine = new VendingMachine();
-	public Inventory inventory = new Inventory();2
+	public Inventory inventory = new Inventory();
 
 
 	public VendingMachineCLI(Menu menu) {

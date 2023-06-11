@@ -7,4 +7,8 @@ public class Gum extends Items {
 
 
     public String purchaseGumDisplayMessage = "Chew Chew, Yum!";
+
+    public Gum() {
+
+    }
 }
