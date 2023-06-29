@@ -46,26 +46,25 @@ public class VendingMachineCLI {
 				System.out.println();
 
 			} else if (choice.equals(MAIN_MENU_OPTION_PURCHASE)) {
-				System.out.println(PURCHASE_OPTIONS);
-				while (true) {
-					String purchase = (String) menu.getChoiceFromOptions(PURCHASE_OPTIONS);
-
-					if (choice.equals(PURCHASE_OPTION_FEED_MONEY)) {
-
-							 System.out.println("Insert Money: ");
-							 vendingMachine.addMoney();
+				inventory.scanInventory();
+				menu.getChoiceFromOptions(PURCHASE_OPTIONS);
+				if (choice.equals(PURCHASE_OPTION_FEED_MONEY)) {
+					System.out.println("Insert Money: ");
+					vendingMachine.addMoney();
 
 
 
 
-							}
-
-							System.out.println(PURCHASE_OPTION_DISPLAY_CURRENT_MONEY_PROVIDED);
-						}
-					}
 				}
 
+
+			} else if (choice.equals(MAIN_MENU_OPTION_EXIT)) {
+				vendingMachine.exitMessage();
 			}
+
+		}
+
+	}
 
 
 		public static void main (String[]args){
