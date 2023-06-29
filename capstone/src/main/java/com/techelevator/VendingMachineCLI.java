@@ -51,10 +51,6 @@ public class VendingMachineCLI {
 				if (choice.equals(PURCHASE_OPTION_FEED_MONEY)) {
 					System.out.println("Insert Money: ");
 					vendingMachine.addMoney();
-
-
-
-
 				}
 
 
