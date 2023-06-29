@@ -37,6 +37,7 @@ public class VendingMachineCLI {
 
 
 	public void run() {
+		vendingMachine.welcomeMessage();
 		while (true) {
 			String choice = (String) menu.getChoiceFromOptions(MAIN_MENU_OPTIONS);
 
@@ -72,5 +73,8 @@ public class VendingMachineCLI {
 			VendingMachineCLI cli = new VendingMachineCLI(menu);
 			cli.run();
 		}
+
+
+
 	}
 

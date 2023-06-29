@@ -28,7 +28,7 @@ public class VendingMachine {
     }
 
     public VendingMachine() {
-        inventory.scanInventory();
+
     }
 
     public Scanner feedMoneyScanner = new Scanner(System.in);
@@ -67,6 +67,12 @@ public class VendingMachine {
 
 
         //dispense change
+        public void welcomeMessage(){
+            System.out.println("Hello, I'm the Vendo-Matic 800.  What can I do for you?");
+        }
+        public void exitMessage(){
+        System.out.println("Thank you for using the Vendo-Matic 800.  Good bye!");
+    }
 
 
 }
