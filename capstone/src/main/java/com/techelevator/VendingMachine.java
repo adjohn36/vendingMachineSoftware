@@ -35,7 +35,7 @@ public class VendingMachine {
 
 
     //feed money
-    public double addMoney(String prompt) {
+    public double addMoney(String userInput) {
         String feedMoneyAmount = feedMoneyScanner.nextLine();
         Double feedMoneyDollarAmount = Double.parseDouble(feedMoneyAmount);
         try {

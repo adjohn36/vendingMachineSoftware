@@ -52,8 +52,8 @@ public class VendingMachineCLI {
 				//while loop - boolean is purchase complete
 				{
 				if (choice == PURCHASE_OPTION_FEED_MONEY) {
-					System.out.println("Insert Money: ");
-					vendingMachine.addMoney("Insert Money: ");
+
+					vendingMachine.addMoney("");
 
 				}else if (choice.equals(PURCHASE_OPTION_SELECT_PRODUCT)) {
 
