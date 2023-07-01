@@ -31,20 +31,23 @@ public class VendingMachine {
 
     }
 
-    public Scanner feedMoneyScanner = new Scanner(System.in);
+    private Scanner feedMoneyScanner = new Scanner(System.in);
 
 
     //feed money
-    public Double addMoney() {
+    public double addMoney(String prompt) {
         String feedMoneyAmount = feedMoneyScanner.nextLine();
         Double feedMoneyDollarAmount = Double.parseDouble(feedMoneyAmount);
-        while (feedMoneyScanner.hasNextLine()) {
-            return feedMoneyDollarAmount;
-
-
+        try {
+            return Double.parseDouble(feedMoneyAmount);
+        }catch (NumberFormatException e){
+            if (feedMoneyAmount.isBlank()){
+                return -1;
+            }else{
+                System.out.println("Please enter a dollar amount");
+            }
         }
         return feedMoneyDollarAmount;
-
     }
         //dispense food - print out message
 
