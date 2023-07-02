@@ -25,6 +25,7 @@ public class VendingMachineCLI {
 	private static final String[] PURCHASE_OPTIONS = {PURCHASE_OPTION_FEED_MONEY, PURCHASE_OPTION_SELECT_PRODUCT, PURCHASE_OPTION_FINISH_TRANSACTION};
 	private static final String MAIN_MENU_ITEM_LIST = "Display vending machine list";
 	private Menu menu;
+	private boolean isPurchaseComplete;
 
 
 	public Inventory inventory = new Inventory();
@@ -48,8 +49,9 @@ public class VendingMachineCLI {
 			}if (choice.equals(MAIN_MENU_OPTION_PURCHASE)) {
 				inventory.scanInventory();
 				menu.getChoiceFromOptions(PURCHASE_OPTIONS);
-
+				isPurchaseComplete = false;
 				//while loop - boolean is purchase complete
+				while (isPurchaseComplete = false)
 				{
 				if (choice == PURCHASE_OPTION_FEED_MONEY) {
 
@@ -58,7 +60,9 @@ public class VendingMachineCLI {
 				}else if (choice.equals(PURCHASE_OPTION_SELECT_PRODUCT)) {
 
 				}else if (choice.equals(PURCHASE_OPTION_FINISH_TRANSACTION)) {
+				isPurchaseComplete = true;
 				}
+
 				}
 
 

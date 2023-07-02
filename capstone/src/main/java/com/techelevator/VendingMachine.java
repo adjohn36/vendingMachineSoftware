@@ -36,6 +36,7 @@ public class VendingMachine {
 
     //feed money
     public double addMoney(String userInput) {
+        System.out.println("Please enter a dollar amount: ");
         String feedMoneyAmount = feedMoneyScanner.nextLine();
         Double feedMoneyDollarAmount = Double.parseDouble(feedMoneyAmount);
         try {
@@ -44,7 +45,7 @@ public class VendingMachine {
             if (feedMoneyAmount.isBlank()){
                 return -1;
             }else{
-                System.out.println("Please enter a dollar amount");
+                System.out.println("Please enter a dollar amount: ");
             }
         }
         return feedMoneyDollarAmount;
