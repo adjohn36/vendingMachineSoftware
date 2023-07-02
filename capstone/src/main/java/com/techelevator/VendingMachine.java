@@ -10,6 +10,7 @@ import java.util.Scanner;
 import com.techelevator.Items;
 
 
+
 public class VendingMachine {
 
 
@@ -66,12 +67,17 @@ public class VendingMachine {
     }
 
     public void transaction(){
+        inventory.scanInventory();
         System.out.println("Please enter a Slot Location to purchase: ");
         String purchaseChoice = purchaseChoiceScanner.nextLine();
-        if (purchaseChoice == items.getSlotLocation()){
+        inventory.getItemsMap();
+        if (inventory.getItemsMap().containsKey(purchaseChoice)) {
+            System.out.println(inventory.getItemsMap());
+
 
         }
-
+        getChange();
+        eatMessage();
     }
         //dispense food - print out message
 
