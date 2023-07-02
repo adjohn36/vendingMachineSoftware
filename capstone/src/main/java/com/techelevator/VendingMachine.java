@@ -39,7 +39,6 @@ public class VendingMachine {
 
     //feed money
     public double addMoney() {
-        System.out.println("Current Money Provided: " + feedMoneyDollarAmount);
         System.out.println("Please enter a dollar amount: ");
         String feedMoneyAmount = feedMoneyScanner.nextLine();
         Double feedMoneyDollarAmount = Double.parseDouble(feedMoneyAmount);
