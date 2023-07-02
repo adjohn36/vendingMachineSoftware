@@ -19,13 +19,15 @@ public class VendingMachineCLI {
 	private static final String MAIN_MENU_OPTION_EXIT = "Exit";
 	private static final String[] MAIN_MENU_OPTIONS = {MAIN_MENU_OPTION_DISPLAY_ITEMS, MAIN_MENU_OPTION_PURCHASE, MAIN_MENU_OPTION_EXIT};
 	private final String PURCHASE_OPTION_DISPLAY_CURRENT_MONEY_PROVIDED = "Current Money Provided: ";//
+
+	private static final String MAIN_MENU_ITEM_LIST = "Display vending machine list";
+	private Menu menu;
+	boolean isPurchaseComplete = false;
 	private static final String PURCHASE_OPTION_FEED_MONEY = "Feed Money";//
 	private static final String PURCHASE_OPTION_SELECT_PRODUCT = "Select Product";//
 	private static final String PURCHASE_OPTION_FINISH_TRANSACTION = "Finish Transaction";//
 	private static final String[] PURCHASE_OPTIONS = {PURCHASE_OPTION_FEED_MONEY, PURCHASE_OPTION_SELECT_PRODUCT, PURCHASE_OPTION_FINISH_TRANSACTION};
-	private static final String MAIN_MENU_ITEM_LIST = "Display vending machine list";
-	private Menu menu;
-	private boolean isPurchaseComplete;
+
 
 
 	public Inventory inventory = new Inventory();
@@ -44,28 +46,26 @@ public class VendingMachineCLI {
 
 			if (choice.equals(MAIN_MENU_OPTION_DISPLAY_ITEMS)) {
 				inventory.scanInventory();
-				System.out.println();
+
 
 			}if (choice.equals(MAIN_MENU_OPTION_PURCHASE)) {
-				inventory.scanInventory();
-				menu.getChoiceFromOptions(PURCHASE_OPTIONS);
-				isPurchaseComplete = false;
-				//while loop - boolean is purchase complete
-				while (isPurchaseComplete = false)
-				{
-				if (choice == PURCHASE_OPTION_FEED_MONEY) {
+				while (isPurchaseComplete == false){
+					String purchaseMenuChoice = (String) menu.getChoiceFromOptions(PURCHASE_OPTIONS);
 
-					vendingMachine.addMoney("");
 
-				}else if (choice.equals(PURCHASE_OPTION_SELECT_PRODUCT)) {
+					//while loop - boolean is purchase complete
 
-				}else if (choice.equals(PURCHASE_OPTION_FINISH_TRANSACTION)) {
-				isPurchaseComplete = true;
+					if (purchaseMenuChoice.equals(PURCHASE_OPTION_FEED_MONEY)) {
+						vendingMachine.addMoney();
+
+					}else if (purchaseMenuChoice.equals(PURCHASE_OPTION_SELECT_PRODUCT)) {
+						isPurchaseComplete = false;
+
+					}else if (purchaseMenuChoice.equals(PURCHASE_OPTION_FINISH_TRANSACTION)) {
+						isPurchaseComplete = true;
+					}
+
 				}
-
-				}
-
-
 			} else if (choice.equals(MAIN_MENU_OPTION_EXIT)) {
 				vendingMachine.exitMessage();
 

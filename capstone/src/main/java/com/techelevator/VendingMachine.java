@@ -19,6 +19,9 @@ public class VendingMachine {
     private Double balance = 0.00;
     public Double feedMoneyDollarAmount = 0.00;
 
+
+    private Menu menu;
+
     public Double getFeedMoneyDollarAmount() {
         return feedMoneyDollarAmount;
     }
@@ -35,12 +38,13 @@ public class VendingMachine {
 
 
     //feed money
-    public double addMoney(String userInput) {
+    public double addMoney() {
+        System.out.println("Current Money Provided: " + feedMoneyDollarAmount);
         System.out.println("Please enter a dollar amount: ");
         String feedMoneyAmount = feedMoneyScanner.nextLine();
         Double feedMoneyDollarAmount = Double.parseDouble(feedMoneyAmount);
         try {
-            return Double.parseDouble(feedMoneyAmount);
+            Double.parseDouble(feedMoneyAmount);
         }catch (NumberFormatException e){
             if (feedMoneyAmount.isBlank()){
                 return -1;
@@ -48,9 +52,12 @@ public class VendingMachine {
                 System.out.println("Please enter a dollar amount: ");
             }
         }
+
+        System.out.println("Current Money Provided: " + feedMoneyDollarAmount);
         return feedMoneyDollarAmount;
     }
         //dispense food - print out message
+
 
 
         public void eatMessage () {
