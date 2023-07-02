@@ -7,6 +7,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Map;
 import java.util.Scanner;
+import com.techelevator.Items;
+
 
 public class VendingMachine {
 
@@ -18,6 +20,7 @@ public class VendingMachine {
     public Gum gum = new Gum();
     private Double balance = 0.00;
     public Double feedMoneyDollarAmount = 0.00;
+    public Items items = new Items();
 
 
     private Menu menu;
@@ -35,6 +38,7 @@ public class VendingMachine {
     }
 
     private Scanner feedMoneyScanner = new Scanner(System.in);
+    private Scanner purchaseChoiceScanner = new Scanner(System.in);
 
 
     //feed money
@@ -58,6 +62,15 @@ public class VendingMachine {
     }
 
     public void getChange() {
+
+    }
+
+    public void transaction(){
+        System.out.println("Please enter a Slot Location to purchase: ");
+        String purchaseChoice = purchaseChoiceScanner.nextLine();
+        if (purchaseChoice == items.getSlotLocation()){
+
+        }
 
     }
         //dispense food - print out message
