@@ -6,7 +6,7 @@ public class Chip extends Items{
     }
 
 
-    private String purchaseChipDisplayMessage = "Crunch Crunch, Yum!";
+    public String purchaseChipDisplayMessage = "Crunch Crunch, Yum!";
 
     public Chip() {
 

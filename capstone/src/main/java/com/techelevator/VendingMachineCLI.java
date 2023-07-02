@@ -61,10 +61,11 @@ public class VendingMachineCLI {
 
 
 					}else if (purchaseMenuChoice.equals(PURCHASE_OPTION_SELECT_PRODUCT)) {
-						vendingMachine.transaction();
+						inventory.transaction();
 
 					}else if (purchaseMenuChoice.equals(PURCHASE_OPTION_FINISH_TRANSACTION)) {
-						isPurchaseComplete = true;
+						vendingMachine.getChange();
+						vendingMachine.eatMessage();
 
 					}
 

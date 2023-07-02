@@ -6,6 +6,8 @@ import java.util.*;
 
 public class Inventory {
 
+    private VendingMachine vendingMachine = new VendingMachine();
+
     private String inventoryFile = "vendingmachine.csv";
     private File inventoryList = new File(inventoryFile);
     private List<Items> items = new ArrayList<>();
@@ -16,7 +18,33 @@ public class Inventory {
         return itemsMap;
     }
 
+    private Scanner purchaseChoiceScanner = new Scanner(System.in);
+
     public String type;
+
+    public void transaction(){
+        scanInventory();
+        vendingMachine.addMoney();
+
+        System.out.println("Please enter a Slot Location to purchase: ");
+        String purchaseChoice = purchaseChoiceScanner.nextLine().toUpperCase(Locale.ROOT);
+        if (itemsMap.containsKey(purchaseChoice)) {
+            itemsMap.get(purchaseChoice).getSlotLocation();
+            itemsMap.get(purchaseChoice).getBrandName();
+            itemsMap.get(purchaseChoice).getPrice();
+            itemsMap.get(purchaseChoice).getTypeOfSnack();
+            itemsMap.get(purchaseChoice).getQuantity();
+            System.out.println(itemsMap.get(purchaseChoice));
+            if (vendingMachine.getBalance(vendingMachine.balance) >= itemsMap.get(purchaseChoice).getPrice()){
+                vendingMachine.eatMessage();
+            }
+            else{
+                System.out.println("Insufficient funds.  Please insert money to complete transaction.");
+            }
+        }
+
+
+    }
 
 
     public void scanInventory() {

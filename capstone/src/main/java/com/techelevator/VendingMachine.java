@@ -16,17 +16,24 @@ public class VendingMachine {
 
     //call inventory
     //TODO add a inventory property here - vending machine has an inventory
-    public Inventory inventory = new Inventory();
+
     private String type;
     public Gum gum = new Gum();
-    private Double balance = 0.00;
-    public Double feedMoneyDollarAmount = 0.00;
+    public Chip chip = new Chip();
+    public Candy candy = new Candy();
+    public Drink drink = new Drink();
+    public double balance;
+    public double feedMoneyDollarAmount;
     public Items items = new Items();
 
 
     private Menu menu;
+    public double getBalance(double balance){
+        balance = balance + feedMoneyDollarAmount;
+        return balance;
+    }
 
-    public Double getFeedMoneyDollarAmount() {
+    public double getFeedMoneyDollarAmount() {
         return feedMoneyDollarAmount;
     }
 
@@ -46,7 +53,7 @@ public class VendingMachine {
     public double addMoney() {
         System.out.println("Please enter a dollar amount: ");
         String feedMoneyAmount = feedMoneyScanner.nextLine();
-        Double feedMoneyDollarAmount = Double.parseDouble(feedMoneyAmount);
+        double feedMoneyDollarAmount = Double.parseDouble(feedMoneyAmount);
         balance = balance + feedMoneyDollarAmount;
         try {
             Double.parseDouble(feedMoneyAmount);
@@ -59,43 +66,35 @@ public class VendingMachine {
         }
 
         System.out.println("Current Money Provided: " + balance);
-        return balance;
+            return balance;
     }
+
+
 
     public void getChange() {
 
     }
 
-    public void transaction(){
-        inventory.scanInventory();
-        System.out.println("Please enter a Slot Location to purchase: ");
-        String purchaseChoice = purchaseChoiceScanner.nextLine();
-        inventory.getItemsMap();
-        if (inventory.getItemsMap().containsKey(purchaseChoice)) {
-            System.out.println(inventory.getItemsMap());
 
-
-        }
-        getChange();
-        eatMessage();
-    }
         //dispense food - print out message
 
 
 
         public void eatMessage () {
+                items.getTypeOfSnack();
+            if (items.getTypeOfSnack().equals("gum")) {
+                System.out.println(gum.purchaseGumDisplayMessage);
 
-            if (type.equals("gum")) {
-                System.out.println("Chew Chew, Yum!");
+            } else if (items.getTypeOfSnack().equals("chip")) {
+                System.out.println(chip.purchaseChipDisplayMessage);
 
-            } else if (type.equals("chip")) {
-                System.out.println("Crunch Crunch, Yum!");
+            } else if (items.getTypeOfSnack().equals("candy")) {
+                System.out.println(candy.purchaseCandyDisplayMessage);
+            } else if (items.getTypeOfSnack().equals("drink")) {
+                System.out.println(drink.purchaseDrinkDisplayMessage);
 
-            } else if (type.equals("candy")) {
-                System.out.println("Munch Munch, Yum!");
-            } else if (type.equals("drink")) {
-                System.out.println("Glug Glug, Yum!");
-
+            }else {
+                exitMessage();
             }
         }
 
