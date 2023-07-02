@@ -8,6 +8,7 @@ public class Inventory {
 
     private VendingMachine vendingMachine = new VendingMachine();
 
+
     private String inventoryFile = "vendingmachine.csv";
     private File inventoryList = new File(inventoryFile);
     private List<Items> items = new ArrayList<>();
@@ -22,21 +23,35 @@ public class Inventory {
 
     public String type;
 
-    public void transaction(){
+    public void transaction(){ // move to items class?
         scanInventory();
         vendingMachine.addMoney();
 
         System.out.println("Please enter a Slot Location to purchase: ");
         String purchaseChoice = purchaseChoiceScanner.nextLine().toUpperCase(Locale.ROOT);
         if (itemsMap.containsKey(purchaseChoice)) {
-            itemsMap.get(purchaseChoice).getSlotLocation();
-            itemsMap.get(purchaseChoice).getBrandName();
-            itemsMap.get(purchaseChoice).getPrice();
-            itemsMap.get(purchaseChoice).getTypeOfSnack();
-            itemsMap.get(purchaseChoice).getQuantity();
+            Items item = new Items();
+            item.setSlotLocation(itemsMap.get(purchaseChoice).getSlotLocation());
+            item.setQuantity(itemsMap.get(purchaseChoice).getQuantity());
+            item.setBrandName(itemsMap.get(purchaseChoice).getBrandName());
+            item.setPrice(itemsMap.get(purchaseChoice).getPrice());
+            item.setTypeOfSnack(itemsMap.get(purchaseChoice).getTypeOfSnack());
+
+
             System.out.println(itemsMap.get(purchaseChoice));
-            if (vendingMachine.getBalance(vendingMachine.balance) >= itemsMap.get(purchaseChoice).getPrice()){
-                vendingMachine.eatMessage();
+            if (vendingMachine.getBalance(vendingMachine.balance) >= item.getPrice()) {
+                if (item.getTypeOfSnack().equals("Gum")) {
+                    System.out.println("Chew Chew, Yum!");
+                }
+                if (item.getTypeOfSnack().equals("Chip")) {
+                    System.out.println("Crunch Crunch, Yum!");
+                }
+                if (itemsMap.get(purchaseChoice).getTypeOfSnack().equals("Candy")) {
+                    System.out.println("Munch Munch, Yum!");
+                }
+                if (itemsMap.get(purchaseChoice).getTypeOfSnack().equals("Drink")) {
+                    System.out.println("Glug Glug, Yum!");
+                }
             }
             else{
                 System.out.println("Insufficient funds.  Please insert money to complete transaction.");

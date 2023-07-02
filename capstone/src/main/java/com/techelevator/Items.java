@@ -16,7 +16,7 @@ public class Items {
 
 
     public String getTypeOfSnack() {
-        return typeOfSnack;
+        return this.typeOfSnack;
     }
 
     public void setTypeOfSnack(String typeOfSnack) {
@@ -24,7 +24,7 @@ public class Items {
     }
 
     public int getQuantity() {
-        return quantity;
+        return this.quantity;
     }
 
     public void setQuantity(int quantity) {
@@ -66,6 +66,6 @@ public class Items {
 
     @Override
     public String toString() {
-        return getSlotLocation() + " - " + getBrandName() + " - " + getPrice() + " amount in stock: " + getQuantity();
+        return getSlotLocation() + " - " + getTypeOfSnack() + " - " + getBrandName() + " - " + getPrice() + " amount in stock: " + getQuantity();
     }
 }
