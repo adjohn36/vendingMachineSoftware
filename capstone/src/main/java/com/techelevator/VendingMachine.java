@@ -82,15 +82,15 @@ public class VendingMachine {
 
         public void eatMessage () {
                 items.getTypeOfSnack();
-            if (items.getTypeOfSnack().equals("gum")) {
+            if (items.getTypeOfSnack().equals("Gum")) {
                 System.out.println(gum.purchaseGumDisplayMessage);
 
-            } else if (items.getTypeOfSnack().equals("chip")) {
+            } else if (items.getTypeOfSnack().equals("Chip")) {
                 System.out.println(chip.purchaseChipDisplayMessage);
 
-            } else if (items.getTypeOfSnack().equals("candy")) {
+            } else if (items.getTypeOfSnack().equals("Candy")) {
                 System.out.println(candy.purchaseCandyDisplayMessage);
-            } else if (items.getTypeOfSnack().equals("drink")) {
+            } else if (items.getTypeOfSnack().equals("Drink")) {
                 System.out.println(drink.purchaseDrinkDisplayMessage);
 
             }else {
