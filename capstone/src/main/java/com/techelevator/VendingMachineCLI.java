@@ -58,11 +58,14 @@ public class VendingMachineCLI {
 					if (purchaseMenuChoice.equals(PURCHASE_OPTION_FEED_MONEY)) {
 						vendingMachine.addMoney();
 
+
+
 					}else if (purchaseMenuChoice.equals(PURCHASE_OPTION_SELECT_PRODUCT)) {
 						isPurchaseComplete = false;
 
 					}else if (purchaseMenuChoice.equals(PURCHASE_OPTION_FINISH_TRANSACTION)) {
 						isPurchaseComplete = true;
+						vendingMachine.eatMessage();
 					}
 
 				}

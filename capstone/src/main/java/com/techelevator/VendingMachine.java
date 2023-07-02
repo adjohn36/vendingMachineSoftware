@@ -42,6 +42,7 @@ public class VendingMachine {
         System.out.println("Please enter a dollar amount: ");
         String feedMoneyAmount = feedMoneyScanner.nextLine();
         Double feedMoneyDollarAmount = Double.parseDouble(feedMoneyAmount);
+        balance = balance + feedMoneyDollarAmount;
         try {
             Double.parseDouble(feedMoneyAmount);
         }catch (NumberFormatException e){
@@ -52,8 +53,12 @@ public class VendingMachine {
             }
         }
 
-        System.out.println("Current Money Provided: " + feedMoneyDollarAmount);
-        return feedMoneyDollarAmount;
+        System.out.println("Current Money Provided: " + balance);
+        return balance;
+    }
+
+    public void getChange() {
+
     }
         //dispense food - print out message
 
