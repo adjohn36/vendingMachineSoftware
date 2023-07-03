@@ -2,6 +2,7 @@ package com.techelevator;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.math.BigDecimal;
 import java.util.*;
 
 public class Inventory {
@@ -22,10 +23,12 @@ public class Inventory {
     private Scanner purchaseChoiceScanner = new Scanner(System.in);
 
     public String type;
+    public double balance = vendingMachine.getBalance();
 
     public void transaction(){
         scanInventory();
-        vendingMachine.addMoney();
+        System.out.println("Current Money Provided: " + balance);
+
 
 
         System.out.println("Please enter a Slot Location to purchase: ");
@@ -38,8 +41,8 @@ public class Inventory {
             item.setPrice(itemsMap.get(purchaseChoice).getPrice());
             item.setTypeOfSnack(itemsMap.get(purchaseChoice).getTypeOfSnack());
             System.out.println(itemsMap.get(purchaseChoice));
-            double change = vendingMachine.getBalance() - item.getPrice();
-            if (vendingMachine.getBalance() >= item.getPrice()) {
+            double change = balance - item.getPrice();
+            if (balance >= item.getPrice()) {
                 System.out.println("Thank you for your purchase");
                 if (item.getTypeOfSnack().equals("Gum")) {
                     System.out.println("Chew Chew, Yum!");
@@ -53,11 +56,12 @@ public class Inventory {
                 if (itemsMap.get(purchaseChoice).getTypeOfSnack().equals("Drink")) {
                     System.out.println("Glug Glug, Yum!");
                 }
+                System.out.println("Your change is: " + change);
             }
             else{
                 System.out.println("Insufficient funds.  Please insert money to complete transaction.");
             }
-            System.out.println("Your change is: " + change);
+
         }
 
 

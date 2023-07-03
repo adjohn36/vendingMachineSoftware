@@ -71,7 +71,7 @@ public class VendingMachine {
 
         System.out.println("Current Money Provided: " + balance);
 
-        return balance;
+        return getBalance();
 
     }
 

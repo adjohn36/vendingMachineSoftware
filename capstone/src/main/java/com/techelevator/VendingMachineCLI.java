@@ -60,7 +60,9 @@ public class VendingMachineCLI {
 
 
 
-					}else if (purchaseMenuChoice.equals(PURCHASE_OPTION_SELECT_PRODUCT)) {
+					}if (purchaseMenuChoice.equals(PURCHASE_OPTION_SELECT_PRODUCT)) {
+						vendingMachine.getBalance();
+						inventory.balance = vendingMachine.getBalance();
 						inventory.transaction();
 
 					}else if (purchaseMenuChoice.equals(PURCHASE_OPTION_FINISH_TRANSACTION)) {
