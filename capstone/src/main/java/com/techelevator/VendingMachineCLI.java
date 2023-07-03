@@ -49,6 +49,7 @@ public class VendingMachineCLI {
 
 
 			}if (choice.equals(MAIN_MENU_OPTION_PURCHASE)) {
+				isPurchaseComplete = false;
 				while (isPurchaseComplete == false){
 					String purchaseMenuChoice = (String) menu.getChoiceFromOptions(PURCHASE_OPTIONS);
 

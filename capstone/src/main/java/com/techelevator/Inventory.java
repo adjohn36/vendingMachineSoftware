@@ -42,8 +42,10 @@ public class Inventory {
             item.setTypeOfSnack(itemsMap.get(purchaseChoice).getTypeOfSnack());
             System.out.println(itemsMap.get(purchaseChoice));
             double change = balance - item.getPrice();
+            int quantity = item.getQuantity();
             if (balance >= item.getPrice()) {
-                System.out.println("Thank you for your purchase");
+                int newQuantity = quantity - 1;
+                System.out.println("Dispensing...");
                 if (item.getTypeOfSnack().equals("Gum")) {
                     System.out.println("Chew Chew, Yum!");
                 }
@@ -57,6 +59,7 @@ public class Inventory {
                     System.out.println("Glug Glug, Yum!");
                 }
                 System.out.println("Your change is: " + change);
+                System.out.println("Amount in stock is now: " + newQuantity);
             }
             else{
                 System.out.println("Insufficient funds.  Please insert money to complete transaction.");
