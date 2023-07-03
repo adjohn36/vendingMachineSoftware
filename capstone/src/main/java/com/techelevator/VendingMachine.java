@@ -5,6 +5,7 @@ import com.techelevator.view.Menu;
 
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.math.BigDecimal;
 import java.util.Map;
 import java.util.Scanner;
 import com.techelevator.Items;
@@ -23,13 +24,13 @@ public class VendingMachine {
     public Candy candy = new Candy();
     public Drink drink = new Drink();
     public double balance;
+
     public double feedMoneyDollarAmount;
     public Items items = new Items();
 
 
     private Menu menu;
-    public double getBalance(double balance){
-        balance = balance + feedMoneyDollarAmount;
+    public double getBalance(){
         return balance;
     }
 
@@ -48,12 +49,15 @@ public class VendingMachine {
     private Scanner feedMoneyScanner = new Scanner(System.in);
     private Scanner purchaseChoiceScanner = new Scanner(System.in);
 
+    boolean isPurchaseFinished = false;
+
 
     //feed money
     public double addMoney() {
+
         System.out.println("Please enter a dollar amount: ");
         String feedMoneyAmount = feedMoneyScanner.nextLine();
-        double feedMoneyDollarAmount = Double.parseDouble(feedMoneyAmount);
+        feedMoneyDollarAmount = Double.parseDouble(feedMoneyAmount);
         balance = balance + feedMoneyDollarAmount;
         try {
             Double.parseDouble(feedMoneyAmount);
@@ -66,14 +70,14 @@ public class VendingMachine {
         }
 
         System.out.println("Current Money Provided: " + balance);
-            return balance;
-    }
 
-
-
-    public void getChange() {
+        return balance;
 
     }
+
+
+
+
 
 
         //dispense food - print out message

@@ -64,10 +64,12 @@ public class VendingMachineCLI {
 						inventory.transaction();
 
 					}else if (purchaseMenuChoice.equals(PURCHASE_OPTION_FINISH_TRANSACTION)) {
-						vendingMachine.getChange();
-						vendingMachine.eatMessage();
+						vendingMachine.exitMessage();
+						isPurchaseComplete = true;
+
 
 					}
+
 
 				}
 			} else if (choice.equals(MAIN_MENU_OPTION_EXIT)) {

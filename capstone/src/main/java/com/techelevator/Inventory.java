@@ -23,9 +23,10 @@ public class Inventory {
 
     public String type;
 
-    public void transaction(){ // move to items class?
+    public void transaction(){
         scanInventory();
         vendingMachine.addMoney();
+
 
         System.out.println("Please enter a Slot Location to purchase: ");
         String purchaseChoice = purchaseChoiceScanner.nextLine().toUpperCase(Locale.ROOT);
@@ -36,10 +37,10 @@ public class Inventory {
             item.setBrandName(itemsMap.get(purchaseChoice).getBrandName());
             item.setPrice(itemsMap.get(purchaseChoice).getPrice());
             item.setTypeOfSnack(itemsMap.get(purchaseChoice).getTypeOfSnack());
-
-
             System.out.println(itemsMap.get(purchaseChoice));
-            if (vendingMachine.getBalance(vendingMachine.balance) >= item.getPrice()) {
+            double change = vendingMachine.getBalance() - item.getPrice();
+            if (vendingMachine.getBalance() >= item.getPrice()) {
+                System.out.println("Thank you for your purchase");
                 if (item.getTypeOfSnack().equals("Gum")) {
                     System.out.println("Chew Chew, Yum!");
                 }
@@ -56,6 +57,7 @@ public class Inventory {
             else{
                 System.out.println("Insufficient funds.  Please insert money to complete transaction.");
             }
+            System.out.println("Your change is: " + change);
         }
 
 
